@@ -1,0 +1,210 @@
+
+/* CINESIGHT_MOBILE_FIX_V1
+   Mobile-only CSS. Desktop and 3D scene are untouched.
+*/
+
+@media (max-width: 600px) {
+
+    /* Compact Live View Analysis */
+    .cx-mobile-analysis > * {
+        top: 118px !important;
+        right: 12px !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        width: min(210px, calc(100vw - 24px)) !important;
+        max-width: calc(100vw - 24px) !important;
+        max-height: 155px !important;
+
+        box-sizing: border-box !important;
+        padding: 10px 12px !important;
+        overflow: auto !important;
+        border-radius: 12px !important;
+    }
+
+    /* Move the bottom controls closer to screen edges */
+    .cx-mobile-bottom-hud {
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 12px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+
+        z-index: 5;
+    }
+
+    /* Smaller selected-seat card */
+    .cx-mobile-selected-seat {
+        align-self: flex-start !important;
+        padding: 7px 12px !important;
+        border-radius: 10px !important;
+    }
+
+    .cx-mobile-selected-seat > div:first-child {
+        font-size: 9px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .cx-mobile-selected-seat > div:nth-child(2) {
+        font-size: 24px !important;
+        line-height: 1.1 !important;
+    }
+
+    .cx-mobile-selected-seat > div:last-child {
+        font-size: 10px !important;
+    }
+
+    /* Two-column responsive button grid */
+    .cx-mobile-controls {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .cx-mobile-controls > button {
+        min-width: 0 !important;
+        min-height: 42px !important;
+        padding: 10px 8px !important;
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+        text-align: center !important;
+        white-space: normal !important;
+    }
+
+    /* Studio Overview / Enter POV: full width */
+    .cx-mobile-controls > button:nth-child(3) {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+
+/* CINESIGHT_MOBILE_HUD_REFINEMENT_V2
+   Mobile-only overrides for existing HUD components.
+   Cinema geometry and desktop layout are unchanged.
+*/
+
+@media screen and (max-width: 600px) {
+
+    .cx-live-analysis {
+        top: 112px !important;
+        right: 12px !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: min(190px, calc(100vw - 24px)) !important;
+        max-width: calc(100vw - 24px) !important;
+        max-height: none !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .cx-live-analysis > div:first-child {
+        font-size: 9px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .cx-live-analysis > div:nth-child(2) {
+        font-size: 19px !important;
+        margin-top: 5px !important;
+        line-height: 1.2 !important;
+    }
+
+    .cx-live-analysis > div:nth-child(3) {
+        font-size: 10px !important;
+        line-height: 1.35 !important;
+        margin-top: 5px !important;
+    }
+
+    .cx-live-analysis > div:nth-child(4) {
+        font-size: 11px !important;
+        margin-top: 7px !important;
+    }
+
+    .cx-live-analysis > p {
+        font-size: 8px !important;
+        line-height: 1.3 !important;
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Raise floating Smart Seats above the mobile control bar. */
+    .cx-smart-seats-floating {
+        position: fixed !important;
+        right: 12px !important;
+        bottom: 162px !important;
+        left: auto !important;
+        max-width: calc(100vw - 24px) !important;
+        z-index: 100 !important;
+    }
+
+    /* Compact Smart Seats trigger. */
+    .cx-smart-seats-floating > button {
+        padding: 9px 12px !important;
+        font-size: 11px !important;
+        border-radius: 10px !important;
+        box-shadow: 0 5px 18px #0007 !important;
+    }
+
+    /* Keep the opened recommendations usable on mobile. */
+    .cx-smart-seats-floating > section {
+        max-width: calc(100vw - 24px) !important;
+        max-height: 48vh !important;
+        overflow-y: auto !important;
+        box-sizing: border-box !important;
+        padding: 14px !important;
+        border-radius: 14px !important;
+    }
+}
+
+
+/* CINESIGHT_COMPACT_ANALYSIS_V3
+   Compact HUD for mobile, both normal and fullscreen mode.
+*/
+@media screen and (max-width: 600px) {
+
+    .cx-live-analysis {
+        top: 132px !important;
+        right: 10px !important;
+        left: auto !important;
+        width: 154px !important;
+        max-width: calc(100% - 20px) !important;
+        max-height: none !important;
+        padding: 9px 10px !important;
+        border-radius: 11px !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    .cx-live-analysis > div:first-child {
+        font-size: 8px !important;
+        letter-spacing: 0.7px !important;
+        line-height: 1.3 !important;
+    }
+
+    .cx-live-analysis > div:nth-child(2) {
+        font-size: 17px !important;
+        margin-top: 5px !important;
+        line-height: 1.1 !important;
+    }
+
+    .cx-live-analysis > div:nth-child(3) {
+        font-size: 9px !important;
+        line-height: 1.35 !important;
+        margin-top: 5px !important;
+    }
+
+    .cx-live-analysis > div:nth-child(4) {
+        font-size: 10px !important;
+        margin-top: 6px !important;
+    }
+
+    /* Detailed disclaimer remains visible on desktop. */
+    .cx-live-analysis > p {
+        display: none !important;
+    }
+}

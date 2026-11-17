@@ -1,0 +1,133 @@
+.cxn-navbar {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(6, 15, 26, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.cxn-navbar * {
+    box-sizing: border-box;
+}
+
+.cxn-inner {
+    min-height: 76px;
+    padding: 14px clamp(16px, 3vw, 32px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cxn-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    white-space: nowrap;
+}
+
+.cxn-brand strong {
+    color: #2de2c5;
+}
+
+.cxn-mark {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    background: #2de2c5;
+    color: #07131d;
+    border-radius: 11px;
+    font-size: 24px;
+}
+
+.cxn-desktop-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cxn-link {
+    color: #9caebd;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 180ms ease, border-color 180ms ease;
+}
+
+.cxn-link:hover,
+.cxn-link.cxn-active {
+    color: #2de2c5;
+}
+
+.cxn-link.cxn-active {
+    border-bottom-color: #2de2c5;
+}
+
+.cxn-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #30434e;
+    border-radius: 10px;
+    background: #10212c;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cxn-mobile-links {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cxn-inner {
+        min-height: 66px;
+        padding: 12px 16px;
+    }
+
+    .cxn-brand {
+        font-size: 19px;
+    }
+
+    .cxn-desktop-links {
+        display: none;
+    }
+
+    .cxn-menu-toggle {
+        display: inline-flex;
+    }
+
+    .cxn-mobile-links.cxn-open {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0 16px 16px;
+    }
+
+    .cxn-mobile-link {
+        color: #acbdca;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 13px 15px;
+        border-radius: 9px;
+    }
+
+    .cxn-mobile-link.cxn-active {
+        background: rgba(45, 226, 197, 0.11);
+        color: #2de2c5;
+    }
+}
